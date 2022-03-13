@@ -32,7 +32,9 @@ Vagrant.configure("2") do |config|
     libseccomp-devel \
     libselinux-devel \
     make \
-    pkgconfig
+    pkgconfig \
+    fakeroot \
+    squashfs-tools
   SHELL
 
   config.vm.provision :salt do |salt|
