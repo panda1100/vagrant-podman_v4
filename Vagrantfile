@@ -38,8 +38,6 @@ Vagrant.configure("2") do |config|
     kernel-modules
   SHELL
 
-  config.vm.provision :reload
-
   config.vm.provision :salt do |salt|
     salt.masterless = true
     salt.minion_config = "salt/minion"
@@ -49,5 +47,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", keep_color: true, inline: <<-SHELL
     salt-call --local --force-color state.apply podman --state-output changes
   SHELL
+  
+  config.vm.provision :reload
 
 end
