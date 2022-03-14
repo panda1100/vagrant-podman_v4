@@ -48,7 +48,13 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", keep_color: true, inline: <<-SHELL
     salt-call --local --force-color state.apply podman --state-output changes
   SHELL
-  
+
   config.vm.provision :reload
+
+  config.vm.provision "shell", inline: <<-SHELL
+    wget https://github.com/apptainer/apptainer/releases/download/v1.0.0/apptainer-1.0.0-1.x86_64.rpm
+    dnf install -y apptainer-1.0.0-1.x86_64.rpm
+    rm apptainer-1.0.0-1.x86_64.rpm
+  SHELL
 
 end
