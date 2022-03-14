@@ -20,6 +20,7 @@ Install plugin
 
 ```
 vagrant plugin install vagrant-libvirt
+vagrant plugin install vagrant-reload
 ```
 
 Provision
