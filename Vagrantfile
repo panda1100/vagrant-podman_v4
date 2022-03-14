@@ -38,6 +38,8 @@ Vagrant.configure("2") do |config|
     kernel-modules
   SHELL
 
+  config.vm.provision :reload
+
   config.vm.provision :salt do |salt|
     salt.masterless = true
     salt.minion_config = "salt/minion"
