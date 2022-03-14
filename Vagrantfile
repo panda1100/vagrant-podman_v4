@@ -34,7 +34,8 @@ Vagrant.configure("2") do |config|
     make \
     pkgconfig \
     fakeroot \
-    squashfs-tools
+    squashfs-tools \
+    kernel-modules
   SHELL
 
   config.vm.provision :salt do |salt|
